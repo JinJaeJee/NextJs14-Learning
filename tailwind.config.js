@@ -13,6 +13,8 @@ module.exports = {
       colors: {
         purpleNav: "#9F70FD",
         purpleItem: "#FDBF60",
+        orangeLight: "#FDBF60",
+        orangeDark: "#FF8911",
       },
     },
   },
