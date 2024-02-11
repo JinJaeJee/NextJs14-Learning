@@ -30,7 +30,7 @@ const MainContent = () => {
   return (
     <div className="container mx-auto px-6 py-8">
       {isModleVisible ? (
-        <Model onClose={showModel}>
+        <Model closeModel={closeModel}>
           <NewContent
             closeModel={closeModel}
             onDescChange={onDescChange}

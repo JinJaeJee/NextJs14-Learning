@@ -18,10 +18,6 @@ const NewContent = ({ onDescChange, onTitleChange, closeModel }) => {
               onClick={closeModel}
               className="absolute top-3 right-3 text-white hover:text-[#FF8080]"
             />
-            <MdClose
-              onClick={closeModel}
-              className="absolute top-3 right-3 text-white hover:text-[#FF8080]"
-            />
           </div>
           <textarea
             className="rounded-[10px] p-3 w-full"
