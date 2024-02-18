@@ -8,9 +8,6 @@ import CallNewPost from "./CallNewPost";
 const MainContent = () => {
   const [isModleVisible, setIsModelVisible] = useState(false);
 
-  const [newDesc, setNewDesc] = useState("You had me rolling. I'm dying");
-  const [newTitle, setNewTitle] = useState("Shit X");
-
   const closeModel = () => {
     setIsModelVisible(false);
   };
@@ -39,14 +36,7 @@ const MainContent = () => {
         </Model>
       ) : null}
       <CallNewPost showModel={showModel} />
-      <div className="grid gap-6 mb-8 md:grid-cols-3">
-        <SubMainContent title={newTitle} desc={newDesc} />
-        <SubMainContent title="Hot Ass" desc="Hello Moon" />
-        <SubMainContent title="Hot Shit" desc="Hello Mar" />
-        <SubMainContent title="Hot PeePee" desc="Hello Jupiter" />
-        <SubMainContent title="Hot Spring" desc="Hello Earthling" />
-        <SubMainContent title="Hot Thailand" desc="Hello Lady BoY" />
-      </div>
+      <div className="grid gap-6 mb-8 md:grid-cols-3"></div>
     </div>
   );
 };

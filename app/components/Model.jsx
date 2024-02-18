@@ -1,6 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 const Model = ({ children, closeModel }) => {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        closeModel();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Remove event listener on component unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeModel]);
   return (
     <div className="">
       <div

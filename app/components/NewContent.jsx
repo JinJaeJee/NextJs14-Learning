@@ -1,11 +1,32 @@
 "use client";
 
-import { MdClose, MdRotate90DegreesCcw } from "react-icons/md";
+import { useState } from "react";
+import { MdClose } from "react-icons/md";
 
-const NewContent = ({ onDescChange, onTitleChange, closeModel }) => {
+const NewContent = ({ closeModel }) => {
+  const [title, SetTitle] = useState("");
+  const [desc, SetDesc] = useState("");
+
+  function titleChangeHandler(event) {
+    SetTitle(event.target.value);
+  }
+
+  function descChangeHandler(event) {
+    SetDesc(event.target.value);
+  }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    const NewData = {
+      title: title,
+      desc: desc,
+    };
+    closeModel();
+  }
+
   return (
     <div className="justify-center items-center bg-[#9F70FD]">
-      <form className=" flex flex-col p-6  max-w-md ">
+      <form className=" flex flex-col p-6  max-w-md " onSubmit={submitHandler}>
         <p className="mb-4">
           <div className="flex justify-between">
             <label
@@ -25,7 +46,7 @@ const NewContent = ({ onDescChange, onTitleChange, closeModel }) => {
             required
             rows={3}
             placeholder="write something..."
-            onChange={onDescChange}
+            onChange={descChangeHandler}
           />
         </p>
         <p>
@@ -41,12 +62,12 @@ const NewContent = ({ onDescChange, onTitleChange, closeModel }) => {
             id="title"
             required
             placeholder="name..."
-            onChange={onTitleChange}
+            onChange={titleChangeHandler}
           />
         </p>
         <button
           type="submit"
-          className="mt-[20px] p-3 flex justify-center border-2 "
+          className="mt-[40px] p-3 bg-orangeLight rounded-xl"
         >
           Submit
         </button>
